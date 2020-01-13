@@ -19,5 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include('posts.urls')),
-    path('api-auth/', include('rest_framework.urls')), # allow for login and logout
+    path('api-auth/', include('rest_framework.urls')),  # allow for login and logout
+    path('api/v1/rest-auth/', include('rest_auth.urls')),  # LOGIN AND LOGOUT ENDPOINTS
+    path('api/v1/rest-auth/registration/', include('rest_auth.registration.urls')), # USER CREATION ENDPOINTS
 ]
